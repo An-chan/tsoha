@@ -3,45 +3,31 @@
  <head>
  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
  <title>Sanatietokanta</title>
+ <link rel="stylesheet" type="text/css" href="tyylit.css">
  </head>
 <body>
 
 <div id="container">
 
-<div id="header" style="background-color:#99CC33;height:150px;text-align:right;">
-<h1 style="margin-bottom:0;">Sanakirja</h1></div>
+<div id="header">
+<h1 style="margin-bottom:0;"><a href="etusivu-alpha.html">Sanakirja</a></h1></div>
 
-<div id="menu" style="background-color:#ADD8FF;height:50px;">
-<table border="0">
-<tr>
-<td style="background-color:#87CEFA;width:120px;height:50px;text-align:center;">
-<b><a href="kaannoshaku">Käännökset</a></b>
-</td>
-<td style="background-color:#87CEFA;width:120px;height:50px;text-align:center;">
-<b><a href="url">Synonyymit</a></b>
-</td>
-<td style="background-color:#87CEFA;width:120px;height:50px;text-align:center;">
-<b><a href="url">Antonyymit</a></b>
-</td>
-<td style="background-color:#87CEFA;width:120px;height:50px;text-align:center;">
-<b><a href="url">Sanalista</a></b>
-</td>
-<td style="background-color:#87CEFA;width:120px;height:50px;text-align:center;">
+<div id="menu">
+<a href="kaannoshaku.html">Käännökset</a>
+<a href="url">Synonyymit</a>
+<a href="url">Antonyymit</a>
+<a href="sanalista.html">Sanalista</a>
 <b><a href="url">Kirjaudu</a></b>
-</td>
-<td>
-<form>
-Sanahaku: <input type="sana" name="sana">
+<form name="input" action="jotain" method="get">
+Sanahaku: <input type="text" name="sana">
+<input type="submit" value="Hae">
 </form> 
-</td>
-</tr>
-</table>
 </div>
 
-<div id="content" style="background-color:#E0FFFF;height:1000px;">
+<div id="content">
 sisaltööö</div>
 
-<div id="footer" style="background-color:#99CC33;clear:both;text-align:center;">
+<div id="footer">
 tämä on alatunniste</div>
 
 </div>
