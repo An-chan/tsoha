@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 <html>
- <head>
- <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
- <title>Sanatietokanta</title>
- </head>
 <body>
 
 <div id="container">
@@ -15,7 +11,7 @@
 <table border="0">
 <tr>
 <td style="background-color:#87CEFA;width:120px;height:50px;text-align:center;">
-<b><a href="kaannoshaku.html">Käännökset</a></b>
+<b><a href="url">Käännökset</a></b>
 </td>
 <td style="background-color:#87CEFA;width:120px;height:50px;text-align:center;">
 <b><a href="url">Synonyymit</a></b>

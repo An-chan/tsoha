@@ -1,0 +1,27 @@
+
+a:link {color:#000066;}
+
+a:visited {color:#4D4D94;}
+
+a:hover {color:#006600;}
+
+table, th, td {
+background-color:#87CEFA;
+width:120px;
+height:50px;
+text-align:center;
+}
+
+menu {
+background-color:#ADD8FF;
+height:50px;
+}
+
+content {
+background-color:#FFFFFF;
+}
+
+footer {
+background-color:#99CC33;
+text-align:center;
+}

@@ -15,7 +15,7 @@
 <table border="0">
 <tr>
 <td style="background-color:#87CEFA;width:120px;height:50px;text-align:center;">
-<b><a href="kaannoshaku.html">Käännökset</a></b>
+<b><a href="url">Käännökset</a></b>
 </td>
 <td style="background-color:#87CEFA;width:120px;height:50px;text-align:center;">
 <b><a href="url">Synonyymit</a></b>
@@ -39,7 +39,25 @@ Sanahaku: <input type="sana" name="sana">
 </div>
 
 <div id="content" style="background-color:#E0FFFF;height:1000px;">
-sisaltööö</div>
+<h3>Käännöshaku</h3><br>
+Kielestä
+<form action="">
+<select name="kielesta">
+<option value="suomi">suomi</option>
+<option value="eng">englanti</option>
+</select>
+</form>
+kieleen
+<form action="">
+<select name="kielesta">
+<option value="suomi">suomi</option>
+<option value="eng">englanti</option>
+</select>
+</form>
+<form>
+Sana: <input type="sana" name="sana">
+</form> 
+</div>
 
 <div id="footer" style="background-color:#99CC33;clear:both;text-align:center;">
 tämä on alatunniste</div>
