@@ -24,29 +24,33 @@ Sanahaku: <input type="text" name="sana">
 </form> 
 </div>
 
-<div id="content" style="background-color:#E0FFFF;height:1000px;">
+<div id="content">
 <h3>Käännöshaku</h3><br>
 Kielestä
-<form action="">
+<form action="" method="post">
 <select name="kielesta">
 <option value="suomi">suomi</option>
 <option value="eng">englanti</option>
 </select>
 </form>
 kieleen
-<form action="">
-<select name="kielesta">
-<option value="suomi">suomi</option>
+<form action="" method="post">
+<select name="kieleen">
 <option value="eng">englanti</option>
+<option value="suomi">suomi</option>
 </select>
 </form>
-<form name="input" action="jotain" method="get">
+<form name="input" action="kaannoshaku.php" method="get">
 Sana: <input type="text" name="sana">
 <input type="submit" value="Hae">
 </form> 
 </div>
 
-<div id="footer" style="background-color:#99CC33;clear:both;text-align:center;">
+<div id="hakutulos">
+<i> Ei tuloksia </i>
+</div>
+
+<div id="footer">
 tämä on alatunniste</div>
 
 </div>

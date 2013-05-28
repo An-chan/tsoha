@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+ <?php
+  $kayt = $_POST["kayt"];
+  $sala = $_POST["sala"];
+
+  function kirjautuminen($kayt, $sala){
+  
+  // tähän haku tietokannasta
+  return true;
+  }
+
+  if (kirjautuminen($kayt, $sala)) {
+	echo "Kiitos kirjautumisesta, {$kayt}!";
+  } else {
+	echo "Kirjautuminen epäonnistui. Olihan salasana oikein?";
+  }
+ ?>
+
+</html>

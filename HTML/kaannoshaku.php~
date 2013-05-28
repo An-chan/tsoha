@@ -1,0 +1,13 @@
+<?php
+ $alkukieli = $_POST["kielesta"];
+ $kohdekieli = $_POST["kieleen"];
+ $sana = $_GET["sana"];
+ 
+ if ($sana = ""){
+
+ } else {
+	// tietokantahaku
+	echo $sana;
+	echo "<br> Määritelmä: Jonkinlainen äänneyhdistelmä, jota käytetään kommunikointiin."
+ }
+?>
