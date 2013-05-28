@@ -17,7 +17,7 @@
 <a href="synonyymit.html">Synonyymit</a>
 <a href="antonyymit.html">Antonyymit</a>
 <a href="sanalista.html">Sanalista</a>
-<b><a href="kirjaudu.html">Kirjaudu</a></b>
+<a href="kirjaudu.html">Kirjaudu</a>
 <form name="input" action="jotain" method="get">
 Sanahaku: <input type="text" name="sana">
 <input type="submit" value="Hae">
@@ -33,9 +33,7 @@ Valitse kieli:
 <option value="suomi">suomi</option>
 <option value="eng">englanti</option>
 </select>
-<input type="submit" value="Hae">
-</form></p>
-</div>
+<input type="submit" value="Hae"></form></p></div>
 
  <div id="hakutulos">
   <?php include("sanalista.php") ?>

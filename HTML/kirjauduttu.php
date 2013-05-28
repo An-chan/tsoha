@@ -4,7 +4,6 @@
   $sala = $_POST["sala"];
 
   function kirjautuminen($kayt, $sala){
-  
   // tähän haku tietokannasta
   return true;
   }

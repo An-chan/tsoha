@@ -13,36 +13,17 @@
 <h1 style="margin-bottom:0;"><a href="etusivu-alpha.html">Sanakirja</a></h1></div>
 
 <div id="menu">
+<form name="input" action="sanahaku.php" method="get">
+Sanahaku: <input type="text" name="sana">
+<input type="submit" value="Hae">
+</form> 
 <a href="kaannoshaku.html">Käännökset</a>
 <a href="synonyymit.html">Synonyymit</a>
 <a href="antonyymit.html">Antonyymit</a>
 <a href="sanalista.html">Sanalista</a>
 <a href="kirjaudu.html">Kirjaudu</a>
-<form name="input" action="jotain" method="get">
-Sanahaku: <input type="text" name="sana">
-<input type="submit" value="Hae">
-</form> 
+<?php
+ if (isset($_SESSION[$kayt]){ ?>
+	<a href="sanamuokkaus.html">Hallitse sanoja</a>
+ <?php } ?>
 </div>
-
-<div id="content">
-<h3>Sanalista</h3>
-Valitse kieli:
-<form name="haku" action="jotain" method="get">
-<select name="kieli">
-<option value="suomi">suomi</option>
-<option value="eng">englanti</option>
-</select>
-<input type="submit" value="Hae"></form> 
-</div>
-
-<div id="hakutulos">
-  <?php include("sanalista.php") ?>
- </div>
-
- <div id="footer">
- tämä on alatunniste</div>
-
- </div>
- 
-</body>
-</html>
