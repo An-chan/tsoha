@@ -7,7 +7,7 @@
 	echo "<i> Ei tuloksia </i>";
  } else {
 	// tietokantahaku
-	echo $sana;
-	echo "<br> Määritelmä: Jonkinlainen äänneyhdistelmä, jota käytetään kommunikointiin."
+	echo $sana . "\n";
+	echo "Määritelmä: Jonkinlainen äänneyhdistelmä, jota käytetään kommunikointiin."
  }
 ?>

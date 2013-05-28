@@ -17,3 +17,5 @@
   }
  ?>
 
+<a href="etusivu-alpha.html">Jatka</a>
+

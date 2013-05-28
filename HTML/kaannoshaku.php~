@@ -4,7 +4,7 @@
  $sana = $_GET["sana"];
  
  if ($sana = ""){
-
+	echo "<i> Ei tuloksia </i>";
  } else {
 	// tietokantahaku
 	echo $sana;

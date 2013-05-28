@@ -1,6 +1,5 @@
-<!DOCTYPE html>
-
- <?php
+<?php
+  session_start();
   $kayt = $_POST["kayt"];
   $sala = $_POST["sala"];
 
@@ -11,10 +10,10 @@
   }
 
   if (kirjautuminen($kayt, $sala)) {
+	$_SESSION["kayttaja"] = $kayt;
 	echo "Kiitos kirjautumisesta, {$kayt}!";
   } else {
 	echo "Kirjautuminen epäonnistui. Olihan salasana oikein?";
   }
  ?>
 
-</html>
