@@ -27,7 +27,9 @@
 <div id="content">
  <h3>Tervetuloa!</h3>
  <p>Tämä on web-pohjainen sanakirjatietokanta.</p>
+ <p>Voit aloittaa sanojen etsimisen käyttämällä pikahakua tai valitsemalla jonkin erityishakuvaihtoehdoista. Mikäli haluat muokata tietokantaa, kirjaudu sisään.</p>
  <p>Tänään on <?php echo date("j.n.Y"); ?>.</p>
+ <p>Sanoja tietokannassa: <?php echo "ei vielä tietoa" ?>
 </div>
 
 <div id="footer">Anni Perheentupa TSOHA 2013</div>

@@ -47,7 +47,7 @@ Sana: <input type="text" name="sana">
 </div>
 
 <div id="hakutulos">
-<i> Ei tuloksia </i>
+<?php include("kaannoshaku.php"); ?>
 </div>
 
 <div id="footer">

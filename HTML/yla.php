@@ -24,6 +24,6 @@ Sanahaku: <input type="text" name="sana">
 <a href="kirjaudu.html">Kirjaudu</a>
 <?php
  if (isset($_SESSION[$kayt]){ ?>
-	<a href="sanamuokkaus.html">Hallitse sanoja</a>
+	<a href="sanamuokkaus.php">Hallitse sanoja</a>
  <?php } ?>
 </div>
