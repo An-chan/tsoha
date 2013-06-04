@@ -1,4 +1,5 @@
-<?php include("yla.php"); ?>
+<?php include("yla.php");
+ require_once 'kyselyt.php';?>
 
 <div id="content">
 <h3>Sanalista</h3>
@@ -18,9 +19,12 @@ Valitse kieli:
  if ($kieli == ""){
 	echo "<i> Ei tuloksia </i>";
  } else {
-	// tänne tietokantahaku
+	$kysely = sanalista($kieli);
 	echo "Lista sanoista kielellä ";
-	echo $kieli;
+	echo $kieli . "</br>";
+  while ($rivi = $kysely->fetch()) {
+    echo $rivi["sana"] . "</br>";
+  }
  }
 ?>
  </div>

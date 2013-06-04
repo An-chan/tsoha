@@ -25,7 +25,7 @@ Sanahaku: <input type="text" name="sana">
 <a href="sanalista.php?kieli=fin">Sanalista</a>
 <?php
  if (isset($_SESSION['kayttaja'])){ ?>
-	<a href="sanamuokkaus.php">Hallitse sanoja</a>
+	<a href="sananhallinta.php">Hallitse sanoja</a>
  <?php } else{ ?>
 	<a href="kirjaudu.php">Kirjaudu</a>
  <?php } ?>

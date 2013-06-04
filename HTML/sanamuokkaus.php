@@ -3,7 +3,7 @@
 <div id="content">
 <?php
  if (!isset($_SESSION["kayttaja"])){
-	echo "Pääsy kielletty!"
+	echo "Pääsy kielletty!";
  }
  $kayt = $_SESSION["kayt"];
 

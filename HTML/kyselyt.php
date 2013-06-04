@@ -26,14 +26,13 @@
  function sanalista($kieli){
   $kysely = haeYhteys()->prepare("SELECT sana from sana WHERE kieliID = ?");
   if ($kysely->execute(array($kieli))){
-    return $kysely->fetchObject();
+    return $kysely;
   } else {
     return null;
   }
  }
 
  function sanahaku($sana){
-  global $yhteys;
   $kysely = haeYhteys()->prepare("SELECT sana from sana WHERE sana = ?");
   // vai pitäisikö hakea myös samankaltaisia sanoja?
   if ($kysely->execute(array($sana))){
@@ -44,22 +43,32 @@
  }
 
  function sanatietohaku($sana){
-  global $yhteys;
-
+  $kysely = haeYhteys()->prepare("SELECT * FROM sana WHERE sana = ?");
+  if ($kysely->execute(array($sana))){
+    return $kysely;
+  } else {
+    return null;
+  }
  }
 
  function kaannoshaku($sana, $kielesta, $kieleen){
-  global $yhteys;
-
+  $kysely = haeYhteys()->prepare("SELECT sana FROM sana, kaannos WHERE sana = ? AND
+                                  (sana.sanaID = kaannos.sana1ID OR sana.sanaID = kaannos.sana2ID)
+                                  AND sana.kieliID= ?");
+  if ($kysely->execute(array($sana, $kielesta))){
+    return $kysely->fetchObject();
+  } else {
+    return null;
+  }
  }
 
  function synonyymihaku($sana){
-  global $yhteys;
+  $kysely = haeYhteys()->prepare("SELECT ");
 
  }
 
  function antonyymihaku($sana){
-  global $yhteys;
+  $kysely = haeYhteys()->prepare("SELECT ");
 
  }
 ?>
