@@ -1,13 +1,19 @@
 <?php
-  session_start();?>
+  session_start();
+  require_once 'kyselyt.php';?>
 <div id="content">
 <?php
+
   $kayt = $_POST["kayt"];
   $sala = $_POST["sala"];
 
   function tunnistaKayttaja($kayt, $sala){
-  // tähän haku tietokannasta
-  return true;
+   $kayttaja = tunnistaudu($kayt, $sala);
+   if ($kayttaja) {
+    return true;
+   } else {
+    return false;
+   }
   }
 
   if (tunnistaKayttaja($kayt, $sala)) {

@@ -20,7 +20,7 @@ kieleen
 <option value="suomi">suomi</option>
 </select>
 </form>
-<form name="input" action="khaku.php" method="get">
+<form name="input" action="kaannoshaku.php" method="get">
 Sana: <input type="text" name="sana">
 <input type="submit" value="Hae">
 </form> 
@@ -28,12 +28,12 @@ Sana: <input type="text" name="sana">
 
 <div id="hakutulos">
  
- <?php if ($sana = ""){
+ <?php if ($sana == ""){
 	echo "<i> Ei tuloksia </i>";
  } else {
 	// tietokantahaku
 	echo $sana . "\n";
-	echo "Määritelmä: Jonkinlainen äänneyhdistelmä, jota käytetään kommunikointiin."
+	echo "Määritelmä: Jonkinlainen äänneyhdistelmä, jota käytetään kommunikointiin.";
  }
 ?>
 </div>

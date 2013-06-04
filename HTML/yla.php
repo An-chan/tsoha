@@ -20,9 +20,9 @@ Sanahaku: <input type="text" name="sana">
 <input type="submit" value="Hae">
 </form> 
 <a href="kaannoshaku.php?sana=">Käännökset</a>
-<a href="synonyymit.php">Synonyymit</a>
-<a href="antonyymit.php">Antonyymit</a>
-<a href="sanalista.php">Sanalista</a>
+<a href="synonyymit.php?sana=">Synonyymit</a>
+<a href="antonyymit.php?sana=">Antonyymit</a>
+<a href="sanalista.php?kieli=fin">Sanalista</a>
 <?php
  if (isset($_SESSION['kayttaja'])){ ?>
 	<a href="sanamuokkaus.php">Hallitse sanoja</a>
