@@ -1,0 +1,5 @@
+0001|'leipä'|'fin'|'leivottu, usein hiivapohjainen viljatuote'|'subs'|'normaali'|null
+0002|'bread'|'eng'|'a baked, grain-based edible item'|'subs'|'normaali'|'bred'
+0003|'bread'|'eng'|'the act of coating something in batter or breadcrumbs'|'verbi'|'normaali'|'bred'
+0004|'aakkoset'|'fin'|'länsimaisessa kirjoituksessa käytetyt kirjaimet listana'|'subs'|'normaali'|null
+
