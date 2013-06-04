@@ -1,0 +1,3 @@
+<?php
+ $kieli = $_GET["kieli"];
+?>

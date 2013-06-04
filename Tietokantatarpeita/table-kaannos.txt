@@ -1,0 +1,5 @@
+INSERT INTO kaannos (sana1ID, sana2ID)
+VALUES (1, 2),
+(5, 10),
+(6, 11),
+(8, 9);

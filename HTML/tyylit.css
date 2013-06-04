@@ -34,9 +34,16 @@ a:hover {color:#006600;}
 
 #content {
 	background-color:#E0FFFF;
+	padding: 10px;
+	
 }
 
 #footer {
 	background-color:#99CC33;
 	text-align:center;
+}
+
+#hakutulos {
+	background-color:#E0FFFF;
+	padding: 20px;
 }

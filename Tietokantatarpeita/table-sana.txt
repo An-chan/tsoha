@@ -1,0 +1,14 @@
+INSERT INTO sana(sanaID, sana, kieliID, maaritelma, sanaluokka, tyyli, lausunta)
+VALUES(1,'leipä','fin','leivottu, usein hiivapohjainen viljatuote','subs','normaali',null), 
+(2,'bread','eng','a baked, grain-based edible item','subs','normaali','bred'), 
+(3,'bread','eng','the act of coating something in batter or breadcrumbs','verbi','normaali','bred'), 
+(4,'aakkoset','fin','länsimaisessa kirjoituksessa käytetyt kirjaimet listana','subs','normaali',null), 
+(5,'beautiful','eng','pleasing to the eye','adj','normaali',null), 
+(6,'pretty','eng','pleasing to the eye','adj','normaali',null), 
+(7,'exquisite','eng','very aesthetically pleasing','adj','formaali',null), 
+(8,'ugly','eng','visually displeasing, offensive','adj','normaali',null), 
+(9,'ruma','fin','epämiellyttävän näköinen','adj','normaali',null), 
+(10,'kaunis','fin','visuaalisesti miellyttävä','adj','normaali',null), 
+(11,'sievä','fin','visuaalisesti miellyttävä, yleensä pienistä asioista','adj','normaali',null), 
+(12,'suloinen','fin','miellyttävän näköinen, usein lapsellisella tavalla','adj','normaali',null), 
+(13,'hyvännäköinen','fin','visuaalisesti miellyttävä, yleensä ihmisestä','adj','informaali',null);

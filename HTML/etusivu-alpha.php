@@ -8,9 +8,4 @@
  <p>Sanoja tietokannassa: <?php echo "0"; ?>
 </div>
 
-<div id="footer">Anni Perheentupa TSOHA 2013</div>
-
-</div>
- 
-</body>
-</html>
+<?php include("ala.php"); ?>
