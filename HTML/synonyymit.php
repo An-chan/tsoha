@@ -1,19 +1,27 @@
-<?php include("yla.php"); ?>
+<?php include("yla.php");
+require_once 'kyselyt.php';
+
+$sana = $_GET["sana"]?>
 
 <div id="content">
 <h3>Synonyymihaku</h3><br>
-<form name="input" action="jotain" method="get">
+<form name="input" action="synonyymit.php" method="get">
 Sana: <input type="text" name="sana">
 <input type="submit" value="Hae">
 </form></div>
+
 <div id="hakutulos">
- <b> Synonyymit </b><br>
+ <b> Synonyymit </b><br><br>
+ 
  <?php if ($sana == ""){
 	echo "<i> Ei tuloksia </i>";
  } else {
-	// tietokantahaku
-	echo $sana . "\n";
-	echo "Määritelmä: Jonkinlainen äänneyhdistelmä, jota käytetään kommunikointiin.";
+	$tulos = synonyymihaku($sana);
+	if ($tulos != null){
+	  include 'sana.php';
+	} else {
+	  echo 'Sanalle ' . $sana . ' ei synonyymejä'; 
+	}
  }
 ?>
 </div>

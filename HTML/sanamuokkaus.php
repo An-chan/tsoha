@@ -7,12 +7,18 @@
  }
  
  $sana = $_GET["sana"];
- echo $sana;
+ echo "<b>" . $sana . "</b><br><br>";
  
 ?>
-<a href="etusivu-alpha.php">Poista sana</a>
-<a href="etusivu-alpha.php">Muokkaa sanaa</a>
-
+<form action="sanasuhteet.php" method="post">
+<input type="hidden" name="sana" value="<?php echo $sana ?>">
+<input type="submit" value="Muokkaa sanaa">
+</form>
+</div>
+<form action="poisto.php" method="post">
+<input type="hidden" name="sana" value="<?php echo $sana ?>">
+<input type="submit" value="Poista sana">
+</form>
 </div>
 
 <?php include("ala.php"); ?>

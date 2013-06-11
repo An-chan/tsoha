@@ -68,23 +68,41 @@
     return null;
   }
  }
- 
- function kaannos($tulos, $sanaid){
-  if($tulos->sana1id == $sanaid){
-    return $tulos->sana2id;
+
+ function synonyymihaku($sana){
+  $sanaid = sanahaku($sana)->sanaid;
+  $kysely = haeYhteys()->prepare("SELECT sana1ID, sana2ID FROM synonyymit
+    WHERE sana1ID=? or sana2ID = ?");
+  if ($kysely->execute(array($sanaid, $sanaid))){
+    $tulos = $kysely->fetchObject();
+    $kysely = haeYhteys()->prepare("SELECT sanaID from sana where sanaID=?");
+    if($tulos->sana1id == $sanaid){
+      $kysely->execute(array($tulos->sana2id));
+    } else {
+      $kysely->execute(array($tulos->sana1id));
+    }
+    return $kysely->fetchObject();
   } else {
-    return $tulos->sana1id;
+    return null;
   }
  }
 
- function synonyymihaku($sana){
-  $kysely = haeYhteys()->prepare("SELECT sana1ID, sana2ID FROM synonyymit
-  WHERE sana1ID in (SELECT sanaID FROM sana WHERE sana = ?) OR
-  sana2ID in (SELECT sanaID FROM sana WHERE sana = ?)");
- }
-
  function antonyymihaku($sana){
-  $kysely = haeYhteys()->prepare("SELECT ");
+  $sanaid = sanahaku($sana)->sanaid;
+  $kysely = haeYhteys()->prepare("SELECT sana1ID, sana2ID FROM antonyymit
+    WHERE sana1ID=? or sana2ID = ?");
+  if ($kysely->execute(array($sanaid, $sanaid))){
+    $tulos = $kysely->fetchObject();
+    $kysely = haeYhteys()->prepare("SELECT sanaID from sana where sanaID=?");
+    if($tulos->sana1id == $sanaid){
+      $kysely->execute(array($tulos->sana2id));
+    } else {
+      $kysely->execute(array($tulos->sana1id));
+    }
+    return $kysely->fetchObject();
+  } else {
+    return null;
+  }
 
  }
  
@@ -108,6 +126,7 @@
     echo "jotain meni vikaan...";
   }
  }
+ 
 ?>
 
 

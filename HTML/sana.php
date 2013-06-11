@@ -15,7 +15,8 @@ require_once 'kyselyt.php';
  }
 
  if (isset($_SESSION["kayttaja"])){
-	?><a href="sanamuokkaus.php?sana=<?php echo $sana ?>">Muokkaa sanaa</a>
+  echo "Sanan ID: " . $sanaID;
+	?><br><a href="sanamuokkaus.php?sana=<?php echo $sana ?>">Muokkaa sanaa</a>
 	<?php
  }
 ?>
