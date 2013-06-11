@@ -33,7 +33,7 @@
  }
 
  function sanahaku($sana){
-  $kysely = haeYhteys()->prepare("SELECT sana from sana WHERE sana = ?");
+  $kysely = haeYhteys()->prepare("SELECT sanaID from sana WHERE sana = ?");
   // vai pitäisikö hakea myös samankaltaisia sanoja?
   if ($kysely->execute(array($sana))){
     return $kysely->fetchObject();
@@ -42,9 +42,9 @@
   }
  }
 
- function sanatietohaku($sana){
-  $kysely = haeYhteys()->prepare("SELECT * FROM sana WHERE sana = ?");
-  if ($kysely->execute(array($sana))){
+ function sanatietohaku($sanaID){
+  $kysely = haeYhteys()->prepare("SELECT * FROM sana WHERE sanaID = ?");
+  if ($kysely->execute(array($sanaID))){
     return $kysely;
   } else {
     return null;
@@ -52,29 +52,35 @@
  }
 
  function kaannoshaku($sana, $kielesta){
-  $kysely = haeYhteys()->prepare("SELECT sana FROM sana, kaannos
-WHERE sana1ID IN (SELECT sana1ID from sana, kaannos
-  WHERE sana = ? AND sanaID=sana2ID AND kieliID=?) AND
-sana1ID=sanaID");
-  $kysely->execute(array($sana, $kielesta));
-  if ($kysely->fetchObject() == null){
-    $kysely = haeYhteys()->prepare("SELECT sana FROM sana, kaannos
-    WHERE sana2ID IN (SELECT sana2ID from sana, kaannos
-      WHERE sana = ? AND sanaID=sana1ID AND kieliID=?) AND
-      sana2ID=sanaID");
-    if ($kysely->execute(array($sana, $kielesta))){
-      return $kysely->fetchObject();
+  $sanaid = sanahaku($sana)->sanaid;
+  $kysely = haeYhteys()->prepare("SELECT sana1ID, sana2ID FROM kaannos
+    WHERE sana1ID=? or sana2ID = ?");
+  if ($kysely->execute(array($sanaid, $sanaid))){
+    $tulos = $kysely->fetchObject();
+    $kysely = haeYhteys()->prepare("SELECT sanaID from sana where sanaID=?");
+    if($tulos->sana1id == $sanaid){
+      $kysely->execute(array($tulos->sana2id));
     } else {
-      return null;
+      $kysely->execute(array($tulos->sana1id));
     }
-  } else {
     return $kysely->fetchObject();
+  } else {
+    return null;
+  }
+ }
+ 
+ function kaannos($tulos, $sanaid){
+  if($tulos->sana1id == $sanaid){
+    return $tulos->sana2id;
+  } else {
+    return $tulos->sana1id;
   }
  }
 
  function synonyymihaku($sana){
-  $kysely = haeYhteys()->prepare("SELECT ");
-
+  $kysely = haeYhteys()->prepare("SELECT sana1ID, sana2ID FROM synonyymit
+  WHERE sana1ID in (SELECT sanaID FROM sana WHERE sana = ?) OR
+  sana2ID in (SELECT sanaID FROM sana WHERE sana = ?)");
  }
 
  function antonyymihaku($sana){

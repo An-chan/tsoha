@@ -7,7 +7,7 @@ Sana: <input type="text" name="sana">
 <input type="submit" value="Hae">
 </form></div>
 <div id="hakutulos">
- 
+ <b> Synonyymit </b><br>
  <?php if ($sana == ""){
 	echo "<i> Ei tuloksia </i>";
  } else {

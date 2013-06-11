@@ -1,7 +1,8 @@
 <?php
 require_once 'kyselyt.php';
- $sana = $tulos->sana;
- $kysely = sanatietohaku($sana);
+
+ $sanaID = $tulos->sanaid;
+ $kysely = sanatietohaku($sanaID);
  
  while ($rivi = $kysely->fetch()) {
   echo "<b>" . $rivi["sana"] . "</b> <i>";
