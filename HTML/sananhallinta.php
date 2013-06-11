@@ -14,20 +14,22 @@ Sana: <input type="text" name="sana">*</br>
 <option value="fin">suomi</option>
 <option value="eng">englanti</option>
 </select>*</br>
-<textarea rows="10" cols="30">
+<textarea name="maaritelma" rows="10" cols="30">
 Sanan määritelmä (pakollinen)
 </textarea></br>
-Sanaluokka*: <input type="radio" name="sanaluok" value="subs">Substantiivi
-<input type="radio" name="sanaluok" value="adj">Adjektiivi
-<input type="radio" name="sanaluok" value="verbi">Verbi
-<input type="radio" name="sanaluok" value="part">Partikkeli
-<input type="radio" name="sanaluok" value="tyhja">Määrittelemätön</br>
-Tyyli*: <input type="radio" name="tyyli" value="normaali">Normaali
-<input type="radio" name="tyyli" value="formaali">Formaali
-<input type="radio" name="tyyli" value="informaali">Informaali
-<input type="radio" name="tyyli" value="alatyyli">Alatyyli
-<input type="radio" name="tyyli" value="akatee">Akateeminen</br>
-Lausumisohje: <input type="text" name="sana"> <i>(Vapaaehtoinen)</i></br>
+Sanaluokka*: <select name="sanaluok" value="subs">
+<option value="subs">Substantiivi</option>
+<option value="adj">Adjektiivi</option>
+<option value="verbi">Verbi</option>
+<option value="part">Partikkeli</option>
+<option value="tyhja">Määrittelemätön</option></select></br>
+Tyyli*: <select name="tyyli" value="normaali">
+<option value="normaali">Normaali</option>
+<option value="formaali">Formaali</option>
+<option value="informaali">Informaali</option>
+<option value="alatyyli">Alatyyli</option>
+<option value="akatee">Akateeminen</option></select></br>
+Lausumisohje: <input type="text" name="lausunta"> <i>(Vapaaehtoinen)</i></br>
 <input type="submit" value="Lisää uusi sana">
 </form>
  </div>

@@ -51,14 +51,24 @@
   }
  }
 
- function kaannoshaku($sana, $kielesta, $kieleen){
-  $kysely = haeYhteys()->prepare("SELECT sana FROM sana, kaannos WHERE sana = ? AND
-                                  (sana.sanaID = kaannos.sana1ID OR sana.sanaID = kaannos.sana2ID)
-                                  AND sana.kieliID= ?");
-  if ($kysely->execute(array($sana, $kielesta))){
-    return $kysely->fetchObject();
+ function kaannoshaku($sana, $kielesta){
+  $kysely = haeYhteys()->prepare("SELECT sana FROM sana, kaannos
+WHERE sana1ID IN (SELECT sana1ID from sana, kaannos
+  WHERE sana = ? AND sanaID=sana2ID AND kieliID=?) AND
+sana1ID=sanaID");
+  $kysely->execute(array($sana, $kielesta));
+  if ($kysely->fetchObject() == null){
+    $kysely = haeYhteys()->prepare("SELECT sana FROM sana, kaannos
+    WHERE sana2ID IN (SELECT sana2ID from sana, kaannos
+      WHERE sana = ? AND sanaID=sana1ID AND kieliID=?) AND
+      sana2ID=sanaID");
+    if ($kysely->execute(array($sana, $kielesta))){
+      return $kysely->fetchObject();
+    } else {
+      return null;
+    }
   } else {
-    return null;
+    return $kysely->fetchObject();
   }
  }
 
@@ -71,4 +81,29 @@
   $kysely = haeYhteys()->prepare("SELECT ");
 
  }
+ 
+ function sanamaara(){
+  $kysely = haeYhteys()->prepare("SELECT COUNT (sana) as maara FROM sana");
+  if ($kysely->execute()){
+    $tulos = $kysely->fetch();
+    $maara = $tulos["maara"];
+    return $maara;
+  } else {
+    return 0;
+  }
+ }
+ 
+ function sanalisays($sana, $kieli, $maaritelma, $sanaluokka, $tyyli, $lausunta){
+  $kysely = haeYhteys()->prepare("INSERT INTO sana (sanaID, sana, kieliID, maaritelma, sanaluokka, tyyli, lausunta) VALUES (?, ?, ?, ?, ?, ?, ?);");
+  $koodi = sanamaara() + 1;
+  if ($kysely->execute(array($koodi, $sana, $kieli, $maaritelma, $sanaluokka, $tyyli, $lausunta))){
+    echo "lisäys onnistui";
+  } else {
+    echo "jotain meni vikaan...";
+  }
+ }
 ?>
+
+
+
+

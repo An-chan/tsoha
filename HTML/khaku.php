@@ -1,13 +1,16 @@
 <?php
+ require_once 'kyselyt.php';
  $alkukieli = $_POST["kielesta"];
- $kohdekieli = $_POST["kieleen"];
  $sana = $_GET["sana"];
  
- if ($sana = ""){
+ if ($sana == ""){
 	echo "<i> Ei tuloksia </i>";
  } else {
-	// tietokantahaku
-	echo $sana . "\n";
-	echo "Määritelmä: Jonkinlainen äänneyhdistelmä, jota käytetään kommunikointiin."
+	$tulos = kaannoshaku($sana, $alkukieli);
+  if ($tulos){
+    include 'sana.php';
+  } else {
+    echo "<i>Sanalla '$sana' kielestä '$alkukieli' ei tuloksia </i>";
+  }
  }
 ?>

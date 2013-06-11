@@ -1,5 +1,6 @@
 <?php
- $sana = $_GET["sana"];
+require_once 'kyselyt.php';
+ $sana = $tulos->sana;
  $kysely = sanatietohaku($sana);
  
  while ($rivi = $kysely->fetch()) {
@@ -9,6 +10,7 @@
   echo $rivi["maaritelma"] . "</br>";
   echo "Tyyli: " . $rivi["tyyli"] . "</br>";
   echo "Kieli: " . $rivi["kieliid"] . "</br>";
+  echo "</br>";
  }
 
  if (isset($_SESSION["kayttaja"])){

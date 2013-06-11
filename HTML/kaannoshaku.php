@@ -1,25 +1,23 @@
-<?php include("yla.php"); 
+<?php include("yla.php");
+ require_once 'kyselyt.php';
 
  $alkukieli = $_POST["kielesta"];
- $kohdekieli = $_POST["kieleen"];
- $sana = $_GET["sana"]; ?>
+ $sana = $_POST["sana"];
+ ?>
 
 <div id="content">
 <h3>Käännöshaku</h3>
 Kielestä
-<form action="" method="post">
+<form action="kaannoshaku.php" method="post">
 <select name="kielesta">
-<option value="suomi">suomi</option>
+<option value="fin">suomi</option>
 <option value="eng">englanti</option>
-</select>
-</form>
-kieleen
-<form action="" method="post">
+</select><br>
+kieleen<br>
 <select name="kieleen">
 <option value="eng">englanti</option>
-<option value="suomi">suomi</option>
-</select>
-</form>
+<option value="fin">suomi</option>
+</select><br>
 <form name="input" action="kaannoshaku.php" method="get">
 Sana: <input type="text" name="sana">
 <input type="submit" value="Hae">
@@ -28,12 +26,16 @@ Sana: <input type="text" name="sana">
 
 <div id="hakutulos">
  
- <?php if ($sana == ""){
+<?php
+  if ($sana == ""){
 	echo "<i> Ei tuloksia </i>";
  } else {
-	// tietokantahaku
-	echo $sana . "\n";
-	echo "Määritelmä: Jonkinlainen äänneyhdistelmä, jota käytetään kommunikointiin.";
+	$tulos = kaannoshaku($sana, $alkukieli);
+  if ($tulos){
+    include 'sana.php';
+  } else {
+    echo "<i>Sanalla '$sana' kielestä '$alkukieli' ei tuloksia </i>";
+  }
  }
 ?>
 </div>
