@@ -1,4 +1,4 @@
-<?php include("yla.php"); 
+﻿<?php include("yla.php"); 
 
  if (!isset($_SESSION["kayttaja"])){
 	echo "Pääsy kielletty!";
@@ -29,7 +29,7 @@ Tyyli*: <select name="tyyli" value="normaali">
 <option value="informaali">Informaali</option>
 <option value="alatyyli">Alatyyli</option>
 <option value="akatee">Akateeminen</option></select></br>
-Lausumisohje: <input type="text" name="lausunta"> <i>(Vapaaehtoinen)</i></br>
+Esimerkkilause: <input type="text" name="esimerkki"> <i>(Vapaaehtoinen)</i></br>
 <input type="submit" value="Lisää uusi sana">
 </form>
  </div>

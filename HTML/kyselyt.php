@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
  function haeYhteys(){
   static $yhteys = null;
@@ -117,10 +117,10 @@
   }
  }
  
- function sanalisays($sana, $kieli, $maaritelma, $sanaluokka, $tyyli, $lausunta){
-  $kysely = haeYhteys()->prepare("INSERT INTO sana (sanaID, sana, kieliID, maaritelma, sanaluokka, tyyli, lausunta) VALUES (?, ?, ?, ?, ?, ?, ?);");
+ function sanalisays($sana, $kieli, $maaritelma, $sanaluokka, $tyyli, $esimerkki){
+  $kysely = haeYhteys()->prepare("INSERT INTO sana (sanaID, sana, kieliID, maaritelma, sanaluokka, tyyli, esimerkki) VALUES (?, ?, ?, ?, ?, ?, ?);");
   $koodi = sanamaara() + 1;
-  if ($kysely->execute(array($koodi, $sana, $kieli, $maaritelma, $sanaluokka, $tyyli, $lausunta))){
+  if ($kysely->execute(array($koodi, $sana, $kieli, $maaritelma, $sanaluokka, $tyyli, $esimerkki))){
     echo "lisäys onnistui";
   } else {
     echo "jotain meni vikaan...";

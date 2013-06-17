@@ -7,10 +7,10 @@ require_once 'kyselyt.php';
  while ($rivi = $kysely->fetch()) {
   echo "<b>" . $rivi["sana"] . "</b> <i>";
   echo $rivi["sanaluokka"] . "</i></br>";
-  echo $rivi["lausunta"] . "</br>";
   echo $rivi["maaritelma"] . "</br>";
   echo "Tyyli: " . $rivi["tyyli"] . "</br>";
   echo "Kieli: " . $rivi["kieliid"] . "</br>";
+  echo "Esimerkki: \"" . $rivi["esimerkki"] . "\" </br>";
   echo "</br>";
  }
 

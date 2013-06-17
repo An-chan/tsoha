@@ -1,11 +1,11 @@
-CREATE TABLE sana (
+﻿CREATE TABLE sana (
 sanaID int primary key,         -- sanaID on sanalle annettu tunnistenumero, esim 345
 sana varchar(30),               -- varsinainen sana, esim 'pallo'
 kieliID varchar(3),             -- viittaus kieli-tauluun
 maaritelma varchar(100),        -- sanan määritelmä
 sanaluokka varchar(10),         -- sanaluokka, esim 'subs' tai 'verbi'
 tyyli varchar(10),              -- sanan tyyli, esim 'formaali' tai 'alatyyli'
-lausunta varchar(30));          -- lausumisohjeet, voi olla null
+esimerkki varchar(100));        -- esimerkkilause
 
 CREATE TABLE kieli (
 kieliID varchar(3) primary key, -- kolmikirjaiminen kielikoodi, esim 'fin'
