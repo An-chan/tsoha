@@ -1,4 +1,4 @@
-<?php
+<?php include("yla.php"); 
  require_once 'kyselyt.php';
  $sana = $_POST["sana"];
  $sanaid = sanahaku($sana);
@@ -17,7 +17,8 @@
  } else {
   echo "Jotain meni vikaan...";
  }
- 
  ?>
-</div>
+ </div>
+ <?php
+ include("ala.php"); ?>
 

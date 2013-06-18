@@ -36,7 +36,7 @@
   $kysely = haeYhteys()->prepare("SELECT sanaID from sana WHERE sana = ?");
   // vai pitäisikö hakea myös samankaltaisia sanoja?
   if ($kysely->execute(array($sana))){
-    return $kysely->fetchObject();
+    return $kysely;
   } else {
     return null;
   }
@@ -52,54 +52,33 @@
  }
 
  function kaannoshaku($sana, $kielesta){
-  $sanaid = sanahaku($sana)->sanaid;
-  $kysely = haeYhteys()->prepare("SELECT sana1ID, sana2ID FROM kaannos
-    WHERE sana1ID=? or sana2ID = ?");
+  $row = sanahaku($sana)->fetch();
+  $sanaid = $row["sanaid"];
+  $kysely = haeYhteys()->prepare("SELECT sanaid from sana JOIN kaannos ON sanaid = kaannos.sana1id WHERE sana2id = ? UNION SELECT sanaid from sana JOIN kaannos ON sanaid = kaannos.sana2id WHERE sana1id = ? ");
   if ($kysely->execute(array($sanaid, $sanaid))){
-    $tulos = $kysely->fetchObject();
-    $kysely = haeYhteys()->prepare("SELECT sanaID from sana where sanaID=?");
-    if($tulos->sana1id == $sanaid){
-      $kysely->execute(array($tulos->sana2id));
-    } else {
-      $kysely->execute(array($tulos->sana1id));
-    }
-    return $kysely->fetchObject();
+    return $kysely;
   } else {
     return null;
   }
  }
 
  function synonyymihaku($sana){
-  $sanaid = sanahaku($sana)->sanaid;
-  $kysely = haeYhteys()->prepare("SELECT sana1ID, sana2ID FROM synonyymit
-    WHERE sana1ID=? or sana2ID = ?");
+  $row = sanahaku($sana)->fetch();
+  $sanaid = $row["sanaid"];
+  $kysely = haeYhteys()->prepare("SELECT sanaid from sana JOIN synonyymit ON sanaid = synonyymit.sana1id WHERE sana2id = ? UNION SELECT sanaid from sana JOIN synonyymit ON sanaid = synonyymit.sana2id WHERE sana1id = ? ");
   if ($kysely->execute(array($sanaid, $sanaid))){
-    $tulos = $kysely->fetchObject();
-    $kysely = haeYhteys()->prepare("SELECT sanaID from sana where sanaID=?");
-    if($tulos->sana1id == $sanaid){
-      $kysely->execute(array($tulos->sana2id));
-    } else {
-      $kysely->execute(array($tulos->sana1id));
-    }
-    return $kysely->fetchObject();
+    return $kysely;
   } else {
     return null;
   }
  }
 
  function antonyymihaku($sana){
-  $sanaid = sanahaku($sana)->sanaid;
-  $kysely = haeYhteys()->prepare("SELECT sana1ID, sana2ID FROM antonyymit
-    WHERE sana1ID=? or sana2ID = ?");
+  $row = sanahaku($sana)->fetch();
+  $sanaid = $row["sanaid"];
+  $kysely = haeYhteys()->prepare("SELECT sanaid from sana JOIN antonyymit ON sanaid = antonyymit.sana1id WHERE sana2id = ? UNION SELECT sanaid from sana JOIN antonyymit ON sanaid = antonyymit.sana2id WHERE sana1id = ? ");
   if ($kysely->execute(array($sanaid, $sanaid))){
-    $tulos = $kysely->fetchObject();
-    $kysely = haeYhteys()->prepare("SELECT sanaID from sana where sanaID=?");
-    if($tulos->sana1id == $sanaid){
-      $kysely->execute(array($tulos->sana2id));
-    } else {
-      $kysely->execute(array($tulos->sana1id));
-    }
-    return $kysely->fetchObject();
+    return $kysely;
   } else {
     return null;
   }
@@ -115,6 +94,13 @@
   } else {
     return 0;
   }
+ }
+ 
+ function seuraavaID(){
+  $kysely = haeYhteys()->prepare("SELECT MAX(sanaid) as suurin FROM sana");
+  $kysely->execute();
+  $suurin = $kysely->fetchObject()->suurin;
+  return $suurin + 1 ;
  }
  
  function sanalisays($sana, $kieli, $maaritelma, $sanaluokka, $tyyli, $esimerkki){
@@ -163,8 +149,3 @@
   }
  } 
   
-?>
-
-
-
-

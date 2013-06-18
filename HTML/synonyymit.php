@@ -8,7 +8,7 @@ $sana = $_GET["sana"]?>
 <form name="input" action="synonyymit.php" method="get">
 Sana: <input type="text" name="sana">
 <input type="submit" value="Hae">
-</form></div>
+</form>
 
 <div id="hakutulos">
  <b> Synonyymit </b><br><br>
@@ -18,12 +18,13 @@ Sana: <input type="text" name="sana">
  } else {
 	$tulos = synonyymihaku($sana);
 	if ($tulos != null){
+	  echo "Sanan '$sana' synonyymit:<br><br>";
 	  include 'sana.php';
 	} else {
 	  echo 'Sanalle ' . $sana . ' ei synonyymejä'; 
 	}
  }
 ?>
-</div>
+</div></div>
 
 <?php include("ala.php"); ?>

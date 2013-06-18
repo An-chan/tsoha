@@ -9,7 +9,6 @@
 Sana: <input type="text" name="sana">
 <input type="submit" value="Hae">
 </form> 
-</div>
 
 <div id="hakutulos">
  
@@ -17,13 +16,14 @@ Sana: <input type="text" name="sana">
 	echo "<i> Ei tuloksia </i>";
  } else {
 	$tulos = sanahaku($sana);
-  if ($tulos){
+  if ($tulos != null){
     include 'sana.php';
   } else {
     echo "<i>Sanalla '$sana' ei tuloksia </i>";
   }
  }
 ?>
+</div>
 </div>
 
 <?php include("ala.php"); ?>

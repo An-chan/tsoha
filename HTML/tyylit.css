@@ -1,3 +1,11 @@
+html {
+    line-height: 0px;
+    background-color:#FFFFF0;
+}
+
+#menu, #header, #content, #hakutulos {
+    line-height: 17px;
+}
 
 a:link {color:#000066;}
 
@@ -6,20 +14,27 @@ a:visited {color:#4D4D94;}
 a:hover {color:#006600;}
 
 #header {
+  line-height: 30px;
 	background-color:#99CC33;
 	height:150px;
 	text-align:right;
+	-moz-border-radius: 15px;
+  border-radius: 15px;
 }
 
 #header a {
 	color:#000066;
 	text-decoration:none;
-	vertical-align:bottom;
+	vertical-align:text-bottom;
+	padding: 10px;
+	text-shadow: 2px 2px #006600;
 }
 
 #menu {
 	background-color:#ADD8FF;
 	height:50px;
+	-moz-border-radius: 15px;
+  border-radius: 15px;
 }
 
 #menu a, #menu form {
@@ -35,12 +50,17 @@ a:hover {color:#006600;}
 #content {
 	background-color:#E0FFFF;
 	padding: 10px;
+	-moz-border-radius: 15px;
+  border-radius: 15px;
 	
 }
 
 #footer {
 	background-color:#99CC33;
 	text-align:center;
+	line-height: 20px;
+	-moz-border-radius: 15px;
+  border-radius: 15px;
 }
 
 #hakutulos {

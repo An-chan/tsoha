@@ -3,7 +3,7 @@
  if (!isset($_SESSION["kayttaja"])){
 	echo "Pääsy kielletty!";
  }
- $kayt = $_SESSION["kayt"]; ?>
+ $kayt = $_SESSION["kayttaja"]; ?>
  <div id="content">
 <p><b>Huom!</b> Tämä sivu on uusien sanojen luomista varten. Mikäli haluat muokata olemassaolevia sanoja tai niiden välisiä yhteyksiä, etsi haluamasi sana tavallisen sanahaun kautta ja klikkaa sanan tiedoista löytyvää "Muokkaa sanaa" -linkkiä. Uuden sanan luodaksesi noudata allaolevia ohjeita. </p>
 

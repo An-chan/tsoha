@@ -8,7 +8,7 @@ $sana = $_GET["sana"]?>
 <form name="input" action="antonyymit.php" method="get">
 Sana: <input type="text" name="sana">
 <input type="submit" value="Hae">
-</form></div>
+</form>
 <div id="hakutulos">
   <b> Antonyymit </b><br><br>
  <?php if ($sana == ""){
@@ -16,12 +16,13 @@ Sana: <input type="text" name="sana">
  } else {
 	$tulos = antonyymihaku($sana);
 	if ($tulos != null){
+	  echo "Sanan '$sana' antonyymit:<br><br>";
 	  include 'sana.php';
 	} else {
 	  echo 'Sanalle ' . $sana . ' ei antonyymejä'; 
 	}
  }
 ?>
-</div>
+</div></div>
 
 <?php include("ala.php"); ?>

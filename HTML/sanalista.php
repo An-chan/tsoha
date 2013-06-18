@@ -10,7 +10,6 @@ Valitse kieli:
 <option value="eng">englanti</option>
 </select>
 <input type="submit" value="Hae"></form> 
-</div>
 
 <div id="hakutulos">
 <?php
@@ -23,10 +22,11 @@ Valitse kieli:
 	echo "Lista sanoista kielellä ";
 	echo $kieli . "</br>";
   while ($rivi = $kysely->fetch()) {
-    echo $rivi["sana"] . "</br>";
+    $sana = $rivi["sana"];
+    echo '<a href="sanahaku.php?sana=' . $sana . '">' . $sana . '</a></br>';
   }
  }
 ?>
- </div>
+ </div></div>
 
 <?php include("ala.php"); ?>
