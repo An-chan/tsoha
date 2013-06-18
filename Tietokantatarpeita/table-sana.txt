@@ -1,4 +1,4 @@
-﻿INSERT INTO sana(sanaID, sana, kieliID, maaritelma, sanaluokka, tyyli, lausunta)
+ INSERT INTO sana(sanaID, sana, kieliID, maaritelma, sanaluokka, tyyli, esimerkki)
 VALUES(1,'leipä','fin','leivottu, usein hiivapohjainen viljatuote','subs','normaali','Leipä maistui hyvältä.'), 
 (2,'bread','eng','a baked, grain-based edible item','subs','normaali','The bread was freshly baked.'), 
 (3,'bread','eng','the act of coating something in batter or breadcrumbs','verbi','normaali','Breaded chicken is the best!'), 
@@ -13,7 +13,7 @@ VALUES(1,'leipä','fin','leivottu, usein hiivapohjainen viljatuote','subs','norm
 (12,'suloinen','fin','miellyttävän näköinen, usein lapsellisella tavalla','adj','normaali','Kissanpentuja pidetään yleisesti hyvin suloisina.'), 
 (13,'hyvännäköinen','fin','visuaalisesti miellyttävä, yleensä ihmisestä','adj','informaali','Onpas siinä hyvännäköinen kaveri.'),
 (14, 'pullo', 'fin', 'nesteiden säilytykseen käytetty astia, jossa on korkki', 'subs', 'normaali', 'Valmis mehu kaadettiin pulloon, joka suljettiin korkilla.'),
-(15, 'bottle', 'eng', 'a container used for storing liquids, usually with a cap or a stopper', 'subs', 'normaali','It's essential to bring a bottle of water on a sunny day.'),
+(15, 'bottle', 'eng', 'a container used for storing liquids, usually with a cap or a stopper', 'subs', 'normaali','It´s essential to bring a bottle of water on a sunny day.'),
 (16, 'vanha', 'fin', 'kauan olemassa ollut tai pitkään elänyt', 'adj', 'normaali', 'Keskustassa on eräs vanha rakennus 1800-luvun alusta.'),
 (17, 'old', 'eng', 'having existed a long time', 'adj', 'normaali', 'The tree was so thick it had to be very old.'),
 (18, 'uusi', 'fin', 'vastikään luotu tai hankittu, hiljattain löydetty', 'adj', 'normaali', 'Kirja oli uusi, vasta viikko sitten julkaistu.'),

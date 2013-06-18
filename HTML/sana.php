@@ -16,7 +16,11 @@ require_once 'kyselyt.php';
 
  if (isset($_SESSION["kayttaja"])){
   echo "Sanan ID: " . $sanaID;
-	?><br><a href="sanamuokkaus.php?sana=<?php echo $sana ?>">Muokkaa sanaa</a>
+	?>
+	<form action="sanamuokkaus.php" method="get">
+<input type="hidden" name="sanaid" value="<?php echo $sanaID ?>">
+<input type="submit" value="Muokkaa sanaa">
+</form>
 	<?php
  }
 ?>

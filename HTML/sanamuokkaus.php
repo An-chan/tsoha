@@ -1,4 +1,5 @@
-<?php include("yla.php"); ?>
+<?php include("yla.php"); 
+require_once 'kyselyt.php';?>
 
 <div id="content">
 <?php
@@ -6,17 +7,19 @@
 	echo "Pääsy kielletty!";
  }
  
- $sana = $_GET["sana"];
- echo "<b>" . $sana . "</b><br><br>";
+ $sanaid = $_GET["sanaid"];
+ $tulos = sanatietohaku($sanaid)->fetch();
+ $sana = $tulos["sana"];
+ echo "<b>" . $sana . "</b><br>";
+ echo "SanaID: " . $sanaid . "<br><br>";
  
 ?>
 <form action="sanasuhteet.php" method="post">
-<input type="hidden" name="sana" value="<?php echo $sana ?>">
+<input type="hidden" name="sanaid" value="<?php echo $sanaid ?>">
 <input type="submit" value="Muokkaa sanaa">
 </form>
-</div>
 <form action="poisto.php" method="post">
-<input type="hidden" name="sana" value="<?php echo $sana ?>">
+<input type="hidden" name="sanaid" value="<?php echo $sanaid ?>">
 <input type="submit" value="Poista sana">
 </form>
 </div>

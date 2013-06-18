@@ -127,6 +127,42 @@
   }
  }
  
+ function sanapoisto($sanaid){
+  $kysely = haeYhteys()->prepare("DELETE FROM sana WHERE sanaID=?;");
+  if ($kysely->execute(array($sanaid))){
+    return true;
+  } else {
+    return false;
+  }
+ }
+ 
+ function lisaaKaannos($sana1id, $sana2id){
+  $kysely = haeYhteys()->prepare("INSERT INTO kaannos (sana1ID, sana2ID) VALUES (?, ?);");
+  if ($kysely->execute(array($sana1id, $sana2id))){
+    return true;
+  } else {
+    return false;
+  }
+ }
+ 
+ function lisaaSynonyymi($sana1id, $sana2id){
+  $kysely = haeYhteys()->prepare("INSERT INTO synonyymit (sana1ID, sana2ID) VALUES (?, ?);");
+  if ($kysely->execute(array($sana1id, $sana2id))){
+    return true;
+  } else {
+    return false;
+  }
+ }
+ 
+ function lisaaAntonyymi($sana1id, $sana2id){
+  $kysely = haeYhteys()->prepare("INSERT INTO antonyymit (sana1ID, sana2ID) VALUES (?, ?);");
+  if ($kysely->execute(array($sana1id, $sana2id))){
+    return true;
+  } else {
+    return false;
+  }
+ } 
+  
 ?>
 
 
