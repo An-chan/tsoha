@@ -1,12 +1,12 @@
 ﻿<?php include("avusteet/yla.php");
-require_once 'avusteet/kyselyt.php
+require_once 'avusteet/kyselyt.php';
 
  /* sanamuokkaus.php on sanan muokkaamisen keskussivu, josta pääsee
  muokkaamisen eri vaihtoehtoihin. Tällä hetkellä näitä ovat sanan
  poistaminen ja sen suhteiden lisääminen. Tulevaisuudessa voitaisiin
  myös luoda mahdollisuudet päivittää sanan määritelmää, poistaa jo
  olemassa olevia yhteyksiä, sekä muita operaatioita. Uudet ominaisuudet
- on helppo lisätä uusina tiedostoina ja niihin johtavina painikkeina. */ ;?>
+ on helppo lisätä uusina tiedostoina ja niihin johtavina painikkeina. */ ?>
 
 <div id="content">
 <?php

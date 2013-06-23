@@ -16,7 +16,6 @@ require_once 'avusteet/kyselyt.php';
     echo "Teit jotain väärin. Kokeile syöttää sana ja sen määritelmä.";
   } else {
     sanalisays($sana, $kieli, $maaritelma, $sanaluokka, $tyyli, $esimerkki);
-    echo "Sana lisätty.";
   }
   
 ?>

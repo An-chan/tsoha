@@ -10,10 +10,8 @@ require_once 'avusteet/kyselyt.php';
  $sana2id = $_POST["sana2ID"];
  $suhde = $_POST["suhde"];
  
- if (!is_int($sana2id)){
-  echo "Jotain meni vikaan...";
- } else if (!sanatietohaku($sana2id)){
-  echo "Jotain meni vikaan...";
+ if (!is_int(intval($sana2id))){
+  echo "Jotain meni vikaan... " . $sana2id . " ei ollut numero";
  } else {
   if ($suhde == "kaannos"){
    if (lisaaKaannos($sana1id, $sana2id)){
