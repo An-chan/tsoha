@@ -31,7 +31,7 @@ tarvitsemat tietokantahaut sekä yhteyden muodostamisen*/
 
  // Listaa kaikki tietyn kielen sanat
  function sanalista($kieli){
-  $kysely = haeYhteys()->prepare("SELECT sana from sana WHERE kieliID = ?");
+  $kysely = haeYhteys()->prepare("SELECT sana from sana WHERE kieliID = ? ORDER BY sana");
   if ($kysely->execute(array($kieli))){
     return $kysely;
   } else {
