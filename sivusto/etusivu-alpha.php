@@ -10,4 +10,4 @@ require_once 'avusteet/kyselyt.php';?>
  echo $maara; ?>
 </div>
 
-<?php include("ala.php"); ?>
+<?php include("avusteet/ala.php"); ?>

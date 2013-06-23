@@ -34,4 +34,4 @@ Esimerkkilause: <input type="text" name="esimerkki"> <i>(Vapaaehtoinen)</i></br>
 </form>
  </div>
  
-<?php include("ala.php"); ?>
+<?php include("avusteet/ala.php"); ?>

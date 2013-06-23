@@ -35,4 +35,4 @@ require_once 'avusteet/kyselyt.php';?>
 </form>
 </div>
  
-<?php include("ala.php"); ?>
+<?php include("avusteet/ala.php"); ?>

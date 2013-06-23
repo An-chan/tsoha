@@ -19,6 +19,5 @@ require_once 'avusteet/kyselyt.php';
  }
  ?>
  </div>
- <?php
- include("ala.php"); ?>
+<?php include("avusteet/ala.php"); ?>
 

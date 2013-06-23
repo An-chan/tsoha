@@ -27,4 +27,4 @@ Sana: <input type="text" name="sana">
 ?>
 </div></div>
 
-<?php include("ala.php"); ?>
+<?php include("avusteet/ala.php"); ?>

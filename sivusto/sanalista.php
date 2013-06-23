@@ -29,4 +29,4 @@ Valitse kieli:
 ?>
  </div></div>
 
-<?php include("ala.php"); ?>
+<?php include("avusteet/ala.php"); ?>

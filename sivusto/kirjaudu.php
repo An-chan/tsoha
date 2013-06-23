@@ -9,4 +9,4 @@ Salasana: <input type="password" name="sala">
 
 </form> </div>
 
-<?php include("ala.php"); ?>
+<?php include("avusteet/ala.php"); ?>
