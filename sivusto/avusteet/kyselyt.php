@@ -1,5 +1,11 @@
 ﻿<?php
+ /*tämä tiedosto sisältää kaikki muiden tiedostojen
+tarvitsemat tietokantahaut sekä yhteyden muodostamisen*/
 
+
+ /* haeYhteys on tarkoitettu tietokantahakujen tukimetodiksi,
+ joka tarkistaa, onko yhteyttä jo olemassa, ja palauttaa joko
+ löydetyn tai luodun yhteyden tietkantakyselyä varten. */
  function haeYhteys(){
   static $yhteys = null;
   
@@ -23,6 +29,7 @@
   }
  }
 
+ // Listaa kaikki tietyn kielen sanat
  function sanalista($kieli){
   $kysely = haeYhteys()->prepare("SELECT sana from sana WHERE kieliID = ?");
   if ($kysely->execute(array($kieli))){
@@ -32,6 +39,7 @@
   }
  }
 
+ // etsii yhden sanan esiintymän tietokannasta
  function sanahaku($sana){
   $kysely = haeYhteys()->prepare("SELECT sanaID from sana WHERE sana = ?");
   // vai pitäisikö hakea myös samankaltaisia sanoja?
@@ -42,6 +50,7 @@
   }
  }
 
+ // hakee yhden sanan kaikki tiedot
  function sanatietohaku($sanaID){
   $kysely = haeYhteys()->prepare("SELECT * FROM sana WHERE sanaID = ?");
   if ($kysely->execute(array($sanaID))){
@@ -51,6 +60,7 @@
   }
  }
 
+ // hakee sanan toisenkielisen käännöksen
  function kaannoshaku($sana, $kielesta){
   $row = sanahaku($sana)->fetch();
   $sanaid = $row["sanaid"];
@@ -62,6 +72,7 @@
   }
  }
 
+ // hakee sanan samankieliset synonyymit
  function synonyymihaku($sana){
   $row = sanahaku($sana)->fetch();
   $sanaid = $row["sanaid"];
@@ -73,6 +84,7 @@
   }
  }
 
+ // hakee sanan samankieliset antonyymit
  function antonyymihaku($sana){
   $row = sanahaku($sana)->fetch();
   $sanaid = $row["sanaid"];
@@ -85,6 +97,7 @@
 
  }
  
+ // hakee tietokantaan talletettujen sanojen kokonaismäärän
  function sanamaara(){
   $kysely = haeYhteys()->prepare("SELECT COUNT (sana) as maara FROM sana");
   if ($kysely->execute()){
@@ -96,6 +109,7 @@
   }
  }
  
+ // laskee seuraavan vapaan ID-numeron uudelle sanalle
  function seuraavaID(){
   $kysely = haeYhteys()->prepare("SELECT MAX(sanaid) as suurin FROM sana");
   $kysely->execute();
@@ -103,6 +117,7 @@
   return $suurin + 1 ;
  }
  
+ // lisää uuden sanan tietokantaan
  function sanalisays($sana, $kieli, $maaritelma, $sanaluokka, $tyyli, $esimerkki){
   $kysely = haeYhteys()->prepare("INSERT INTO sana (sanaID, sana, kieliID, maaritelma, sanaluokka, tyyli, esimerkki) VALUES (?, ?, ?, ?, ?, ?, ?);");
   $koodi = sanamaara() + 1;
@@ -113,6 +128,7 @@
   }
  }
  
+ // poistaa sanan tietokannasta, HUOM. toimii vain id-numerolla
  function sanapoisto($sanaid){
   $kysely = haeYhteys()->prepare("DELETE FROM sana WHERE sanaID=?;");
   if ($kysely->execute(array($sanaid))){
@@ -122,6 +138,7 @@
   }
  }
  
+ // lisää käännös-suhteen tietokantaan
  function lisaaKaannos($sana1id, $sana2id){
   $kysely = haeYhteys()->prepare("INSERT INTO kaannos (sana1ID, sana2ID) VALUES (?, ?);");
   if ($kysely->execute(array($sana1id, $sana2id))){
@@ -131,6 +148,7 @@
   }
  }
  
+ // lisää synonyymisuhteen tietokantaan
  function lisaaSynonyymi($sana1id, $sana2id){
   $kysely = haeYhteys()->prepare("INSERT INTO synonyymit (sana1ID, sana2ID) VALUES (?, ?);");
   if ($kysely->execute(array($sana1id, $sana2id))){
@@ -140,6 +158,7 @@
   }
  }
  
+ // lisää antonyymisuhteen tietokantaan
  function lisaaAntonyymi($sana1id, $sana2id){
   $kysely = haeYhteys()->prepare("INSERT INTO antonyymit (sana1ID, sana2ID) VALUES (?, ?);");
   if ($kysely->execute(array($sana1id, $sana2id))){

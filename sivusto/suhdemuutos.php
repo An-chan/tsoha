@@ -1,5 +1,10 @@
 ﻿<?php
 require_once 'avusteet/kyselyt.php';
+ 
+ /* suhdemuutos.php suorittaa uusien sanasuhteiden lisäämisen. Jos lisäys
+ epäonnistuu, annetaan virheilmoitus. Jos se onnistuu, annetaan tästä
+ käyttäjälle ilmoitus. Kaikkien suhteiden lisäys, laadusta huolimatta,
+ tapahtuu tämän tiedoston kautta. */
 
  $sana1id = $_POST["sana1ID"];
  $sana2id = $_POST["sana2ID"];

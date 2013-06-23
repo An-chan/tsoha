@@ -1,6 +1,11 @@
 ﻿<?php
   session_start();
-  require_once 'avusteet/kyselyt.php';?>
+  require_once 'avusteet/kyselyt.php
+
+ /* kirjauduttu.php vertaa käyttäjän antamia tunnusta ja salasanaa
+ tietokannasta löytyviin. Jos saadaan osuma tietokannasta, kirjataan
+ käyttäjä sisään ja annetaan istunnolle hänen tunnuksensa. Jos tunnusta
+ tai salasanaa ei löydy, annetaan virheilmoitus */ ;?>
 <div id="content">
 <?php
 

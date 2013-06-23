@@ -1,5 +1,9 @@
 ﻿<?php include("avusteet/yla.php");
-require_once 'avusteet/kyselyt.php';?>
+require_once 'avusteet/kyselyt.php';
+
+ /* sanaista.php hakee kaikki tietyn kielen sanat ja listaa ne linkkeinä,
+ jotta käyttäjä pääsee katsomaan kunkin sanan tietoja helposti. Kieli
+ valitaan pudotusvalikosta, joten syöte on aina validi */ ?>
 
 <div id="content">
 <h3>Sanalista</h3>

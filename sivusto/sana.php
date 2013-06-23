@@ -1,5 +1,10 @@
 <?php
 require_once 'avusteet/kyselyt.php';
+ /* Tämä tiedosto on tarkoitettu kaikkien eri hakujen tulosten näyttämiseen.
+ Sanat näytetään aina samalla tavalla, mahdollisimman siististi ja
+ helppolukuisesti esitettynä. Jos sanoilta poistetaan attribuutteja tai niitä
+ lisätään, tai jos esitystapaa halutaan muuten vain muuttaa, tarvitsee tällöin
+ muuttaa vain tämän tiedoston sisältöä. */
 
  $onkoTulos = false;
  while ($row = $tulos->fetch()){

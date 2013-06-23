@@ -1,5 +1,11 @@
 <?php include("avusteet/yla.php");
 require_once 'avusteet/kyselyt.php';
+
+ /* poisto.php:n tehtävä on sanan varsinainen poistaminen. Jos käyttäjällä
+ ei ole oikeuksia, tai jos poisto muuten epäonnistuu, annetaan virheilmoitus.
+ Muussa tapauksessa sana poistetaan ja käyttäjälle ilmoitetaan toimenpiteen
+ onnistuneen */
+
  $sana = $_POST["sana"];
  $sanaid = sanahaku($sana);
 ?>

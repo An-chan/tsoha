@@ -1,5 +1,9 @@
-<?php
+﻿<?php
   session_start();
+
+  /* yla.php on jokaiselle sivun yläosaan liitettävä tiedosto,
+ joka sisältää sekä istunnon ylläpidon (yllä) että css-tyylitiedoston
+ lisäyksen ja näyttämisen sekä valikkopalkin (alla) */
 ?><!DOCTYPE html>
 <html>
  <head>

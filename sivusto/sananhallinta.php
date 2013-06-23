@@ -1,5 +1,9 @@
 ﻿<?php include("avusteet/yla.php");
 
+ /* Tämä tiedosto on tarkoitettu sanojen lisäämiseen sekä tulevaisuudessa myös
+ mahdollisesti muihinkin tietokannan hallintaan liittyvään toiminnallisuuteen.
+ Se on tarjolla vain kirjautuneille käyttäjille. */
+
  if (!isset($_SESSION["kayttaja"])){
 	echo "Pääsy kielletty!";
  }

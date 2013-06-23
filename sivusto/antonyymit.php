@@ -1,6 +1,9 @@
 ﻿<?php include("avusteet/yla.php");
 require_once 'avusteet/kyselyt.php';
 
+ /* Tiedosto suorittaa antonyymien hakemisen. Tulokset generoidaan ja näytetään
+ samalla sivulla sana.php:n avulla. */
+
 $sana = $_GET["sana"]?>
 
 <div id="content">

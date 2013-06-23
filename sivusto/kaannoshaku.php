@@ -1,6 +1,9 @@
 ﻿<?php include("avusteet/yla.php");
 require_once 'avusteet/kyselyt.php';
 
+ /* Tiedosto suorittaa käännösten hakemisen. Tulokset generoidaan ja näytetään
+ samalla sivulla sana.php:n avulla. */
+
  $alkukieli = $_POST["kielesta"];
  $sana = $_POST["sana"];
  ?><div id="content">
