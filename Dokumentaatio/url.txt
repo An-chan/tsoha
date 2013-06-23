@@ -1,1 +1,1 @@
-http://asperhee.users.cs.helsinki.fi/tsoha/HTML/etusivu-alpha.php
+http://asperhee.users.cs.helsinki.fi/tsoha/sivusto/etusivu-alpha.php
